@@ -27,9 +27,14 @@ local colors = {
   bg_b1     = "#383c44",
   bg_b2     = "#484c54",
   bg_inv    = "#cccfd4",
+
   fg_red    = accent_colors.red.fg,
+  fg_orange = accent_colors.orange.fg,
   fg_green  = accent_colors.green.fg,
+  fg_yellow = accent_colors.yellow.fg,
+  fg_blue = accent_colors.blue.fg,
   fg_purple = accent_colors.magenta.fg,
+  fg_cyan = accent_colors.cyan.fg,
 }
 
 return colors

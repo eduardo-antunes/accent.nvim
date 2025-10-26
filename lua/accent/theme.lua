@@ -36,12 +36,13 @@ local theme = {
   Comment    = { fg = c.fg_gray2 , bg = c.none },
   String     = { fg = c.accent_fg, bg = c.none },
   Number     = { fg = c.fg       , bg = c.none },
-  Type       = { fg = c.fg_gray1 , bg = c.none },
+  Type       = { fg = c.fg       , bg = c.none },
+  Statement  = { fg = c.fg_gray1 , bg = c.none },
   PreProc    = { fg = c.fg_gray2 , bg = c.none },
   Underlined = { fg = c.fg       , bg = c.none  , underline = true },
   Special    = { fg = c.accent_fg, bg = c.none },
   Error      = { fg = c.fg_red   , bg = c.none },
-  Operator   = { fg = c.fg       , bg = c.none },
+  Operator   = { fg = c.fg_gray1 , bg = c.none },
   Identifier = { fg = c.fg       , bg = c.none },
   Todo       = { fg = c.fg       , bg = c.none },
 
@@ -51,12 +52,18 @@ local theme = {
   DiffChange = { fg = c.none    , bg = c.bg_b1 },
   DiffText   = { fg = c.fg_gray1, bg = c.none  },
 
+  -- Diagnostics
+  DiagnosticError   = { fg = c.fg_red   , bg = c.none },
+  DiagnosticWarning = { fg = c.fg_yellow, bg = c.none },
+  DiagnosticInfo    = { fg = c.fg_blue  , bg = c.none },
+  DiagnosticHint    = { fg = c.fg_cyan  , bg = c.none },
+  DiagnosticOk      = { fg = c.fg_green , bg = c.none },
+
   -- Links
   NormalFloat = { link = "Normal"   },
   IncSearch   = { link = "Search"   },
   CurSearch   = { link = "Search"   },
   Macro       = { link = "PreProc"  },
-  Statement   = { link = "Type"     },
   Constant    = { link = "Type"     },
   SpecialKey  = { link = "Comment"  },
   Title       = { link = "Type"     },
