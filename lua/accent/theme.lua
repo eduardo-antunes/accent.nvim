@@ -68,11 +68,11 @@ local theme = {
   DiagnosticOk    = { fg = c.fg_green , bg = c.none },
 
   -- Diagnostics underline
-  DiagnosticUnderlineError = { fg = c.fg_red   , bg = c.none, undercurl = true },
-  DiagnosticUnderlineWarn  = { fg = c.fg_yellow, bg = c.none, undercurl = true },
-  DiagnosticUnderlineInfo  = { fg = c.fg_blue  , bg = c.none, undercurl = true },
-  DiagnosticUnderlineHint  = { fg = c.fg_cyan  , bg = c.none, undercurl = true },
-  DiagnosticUnderlineOk    = { fg = c.fg_green , bg = c.none, undercurl = true },
+  DiagnosticUnderlineError = { sp = c.fg_red   , bg = c.none, undercurl = true },
+  DiagnosticUnderlineWarn  = { sp = c.fg_yellow, bg = c.none, undercurl = true },
+  DiagnosticUnderlineInfo  = { sp = c.fg_blue  , bg = c.none, undercurl = true },
+  DiagnosticUnderlineHint  = { sp = c.fg_cyan  , bg = c.none, undercurl = true },
+  DiagnosticUnderlineOk    = { sp = c.fg_green , bg = c.none, undercurl = true },
 
   -- General links
   NormalFloat = { link = "Normal"     },
