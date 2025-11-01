@@ -65,6 +65,8 @@ vim.cmd.colors "accent"
 The values presented above are the default ones. For the options that support
 both spellings of color, the American spelling ("color") takes precedence if
 both versions are set. This behavior is compatible with the original plugin.
+Another point that should be noted is that, if any option is set to 0, it will
+be interpreted as false; this is also for compatibility.
 
 ## Differences from accent.vim
 
@@ -78,7 +80,7 @@ differences are, in no particular order:
 
 * Brighter color for comments, to make them stand out more;
 * Support for the terminal and deuteranopia options;
-* Better cursorline support. In the original, the defaul background is still
+* Better cursorline support. In the original, the default background is still
   used for certain elements even when cursorline is enabled;
 * Explicit support for treesitter (mostly to stop it from overusing the accent
   color);
@@ -92,8 +94,8 @@ Invoking `require("accent")` returns a table with the following keys:
 
 * `load`: function that loads the colorscheme. It's what gets called when you
   invoke `colors accent`;
-* `colors`: table with the current color pallete. Uses whatever accent color
-  was set when `load` was last called;
+* `colors`: table with the current color pallete, so it uses whatever accent
+  color was set when `load` was last called;
 * `accent_colors`: list of available accent colors. __Their order is fixed and
   won't change between versions__.
 
@@ -110,7 +112,7 @@ if vim.fn.getcwd() == vim.fn.expand("$HOME/src/cool-project") then
 end
 ```
 
-Another idea is to use a key binding to circle through the accent colors on the
+Another idea is to set key bindings to cycle through the accent colors on the
 fly:
 
 ```lua
@@ -122,6 +124,13 @@ vim.cmd.colors "accent"
 vim.keymap.set("n", "<tab>", function()
   i = i + 1
   if i > #colors then i = 1 end
+  vim.g.accent_color = colors[i]
+  vim.cmd.colors "accent"
+end)
+
+vim.keymap.set("n", "<s-tab>", function()
+  i = i - 1
+  if i == 0 then i = #colors end
   vim.g.accent_color = colors[i]
   vim.cmd.colors "accent"
 end)
@@ -154,7 +163,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-The original colorscheme, with each this version shares no code but nonetheless
+The original colorscheme, with which this version shares no code but nonetheless
 borrows a lot from, is licensed under the MIT license:
 
 ```
