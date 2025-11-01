@@ -39,7 +39,7 @@ M.accent_colors = {
 function M.get(config)
   config = config or {}
   local darken = config.darken
-  local accent = M.accent_colors[config.accent] or M.accent_colors.green
+  local accent = M.accent_colors[config.accent] or M.accent_colors.yellow
 
   return {
     none = "NONE",

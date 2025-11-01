@@ -41,8 +41,6 @@ local function cwd_color()
   return colors[key]
 end
 
---------------------------------------------------------------------------------
-
 local function get_config()
   local config = {
     no_bg          = option "no_bg"         ,
@@ -58,14 +56,6 @@ local function get_config()
     config.accent = cwd_color()
   end
   return config
-end
-
--- Loads main theme
-local function load_theme(theme)
-end
-
--- Loads terminal theme
-local function load_terminal_theme(theme)
 end
 
 --------------------------------------------------------------------------------
