@@ -7,6 +7,11 @@ with.
 
 Unlike the original, this version is GUI-only (at least for the moment).
 
+![screenshot](/static/screenshot.png?raw=true)
+
+(the repository for the original colorscheme has a gif that showcases the
+concept more effectively)
+
 ## Installation
 
 No misteries here. There is no setup function that you need to call or anything,
