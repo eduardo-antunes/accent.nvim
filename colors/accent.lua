@@ -1,1 +1,1 @@
-require("accent.utils").setup()
+require("accent").load()
