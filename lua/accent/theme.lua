@@ -38,6 +38,7 @@ function M.get_base(colors, config)
     StatusLineNC = { fg = c.fg_gray2 , bg = c.bg_gray2  },
     VertSplit    = { fg = c.accent_fg, bg = c.bg_gray1  },
     LineNr       = { fg = c.fg_gray3 , bg = c.none      },
+    SignColumn   = { fg = c.accent_fg, bg = c.none      },
     CursorLineNr = { fg = c.fg_gray1 , bg = c.none      },
     CursorLine   = { fg = c.none     , bg = c.bg_gray1  },
     MatchParen   = { fg = c.fg_gray1 , bg = c.bg_gray1  },
