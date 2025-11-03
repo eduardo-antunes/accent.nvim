@@ -19,23 +19,17 @@ local M = {}
 function M.get_base(colors, config)
   local c = colors
   config = config or {}
-
-  local background = config.no_bg
-    and c.none
-    or c.bg
-  local status_fg = config.invert_status
-    and c.fg_invd
-    or c.fg_gray1
-  local diff_add = config.deuteranopia
-    and c.fg_blue
-    or c.fg_green
+  local background = config.no_bg and c.none or c.bg
+  local status_fg  = config.invert_status and c.fg_invd or c.fg_gray1
+  local diff_add   = config.deuteranopia and c.fg_blue or c.fg_green
 
   return {
     -- General stuff
     Normal       = { fg = c.fg       , bg = background  },
     StatusLine   = { fg = status_fg  , bg = c.accent_bg },
-    DiffAdd      = { fg = diff_add   , bg = c.none      },
     StatusLineNC = { fg = c.fg_gray2 , bg = c.bg_gray2  },
+    WinBar       = { fg = c.fg       , bg = c.bg_gray2   , bold = true },
+    WinBarNC     = { fg = c.fg       , bg = c.bg_gray1  },
     VertSplit    = { fg = c.accent_fg, bg = c.bg_gray1  },
     LineNr       = { fg = c.fg_gray3 , bg = c.none      },
     SignColumn   = { fg = c.accent_fg, bg = c.none      },
@@ -71,6 +65,7 @@ function M.get_base(colors, config)
     Todo       = { fg = c.fg       , bg = c.none },
 
     -- Diff mode
+    DiffAdd    = { fg = diff_add  , bg = c.none     },
     DiffDelete = { fg = c.fg_red  , bg = c.none     },
     DiffChange = { fg = c.none    , bg = c.bg_gray1 },
     DiffText   = { fg = c.fg_gray1, bg = c.none     },
