@@ -136,6 +136,26 @@ vim.keymap.set("n", "<s-tab>", function()
 end)
 ```
 
+Finally, if you use `mini.pick`, you could also define a custom picker to select
+and load the accent color that you want quickly (this example could certainly be
+adapted to work with `telescope.nvim`):
+
+```lua
+vim.keymap.set("n", "<leader>c", function()
+  local choose = function(name)
+    vim.g.accent_color = name
+    vim.cmd.colors "accent"
+  end
+  local items = require("accent").accent_colors
+  local source = {
+    items = items,
+    choose = choose,
+    name = "Accent colors",
+  }
+  require("mini.pick").start { source = source }
+end)
+```
+
 ## Thanks
 
 Thank you to [Reece Selwood](https://github.com/Alligator), aka Alligator, for
