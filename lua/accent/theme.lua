@@ -54,9 +54,9 @@ function M.get_base(colors, config)
     String     = { fg = c.accent_fg, bg = c.none },
     Number     = { fg = c.accent_fg, bg = c.none },
     Constant   = { fg = c.accent_fg, bg = c.none },
-    Type       = { fg = c.fg       , bg = c.none },
+    Type       = { fg = c.fg_gray1 , bg = c.none },
     Statement  = { fg = c.fg_gray1 , bg = c.none },
-    PreProc    = { fg = c.fg_gray2 , bg = c.none },
+    PreProc    = { fg = c.fg_gray1 , bg = c.none },
     Underlined = { fg = c.fg       , bg = c.none  , underline = true },
     Special    = { fg = c.accent_fg, bg = c.none },
     Error      = { fg = c.fg_red   , bg = c.none },
@@ -102,7 +102,6 @@ function M.get_base(colors, config)
     RedrawDebugComposed  = { fg = c.fg_none, bg = c.bg_green  },
     RedrawDebugRecompose = { fg = c.fg_none, bg = c.bg_red    },
 
-
     -- General links
     NormalFloat = { link = "Normal"     },
     IncSearch   = { link = "Search"     },
@@ -122,7 +121,7 @@ function M.get_base(colors, config)
     ["@function.builtin"] = { link = "Identifier" },
     ["@module.builtin"]   = { link = "Identifier" },
     ["@tag.builtin"]      = { link = "Identifier" },
-    ["@type.builtin"]     = { link = "Identifier" },
+    ["@type.builtin"]     = { link = "Type"       },
     ["@constant.builtin"] = { link = "Constant"   },
     ["@constructor"]      = { link = "Statement"  },
     ["@variable.parameter.builtin"] = { link = "Identifier" },
