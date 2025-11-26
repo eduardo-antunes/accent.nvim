@@ -137,11 +137,10 @@ end)
 ```
 
 Finally, if you use `mini.pick`, you could also define a custom picker to select
-and load the accent color that you want quickly (this example could certainly be
-adapted to work with `telescope.nvim`):
+and load the accent color that you want quickly:
 
 ```lua
-vim.keymap.set("n", "<leader>c", function()
+local function accent_colors_picker()
   local choose = function(name)
     vim.g.accent_color = name
     vim.cmd.colors "accent"
@@ -153,7 +152,9 @@ vim.keymap.set("n", "<leader>c", function()
     name = "Accent colors",
   }
   require("mini.pick").start { source = source }
-end)
+end
+require("mini.pick").registry.accent_colors = accent_colors_picker
+vim.keymap.set("n", "<leader>C", accent_colors_picker)
 ```
 
 ## Thanks
