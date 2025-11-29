@@ -23,7 +23,7 @@ end
 
 local function cwd_color()
   local function hash(str)
-    local bit = require("bit")
+    local bit = require "bit"
     local hash = 2166136261
     for i = 1, #str do
       local c = str:byte(i)
@@ -50,6 +50,7 @@ local function get_config()
     terminal       = option "terminal"      ,
 
     accent = option "color" or option "colour",
+    gray_status = option "gray_status" or option "grey_status",
     auto_cwd_color = option "auto_cwd_color" or option "auto_cwd_colour",
   }
   if not config.accent and config.auto_cwd_color then

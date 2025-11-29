@@ -42,7 +42,7 @@ function M.get(config)
   local accent = M.accent_colors[config.accent] or M.accent_colors.yellow
 
   return {
-    none = "NONE",
+    none       = "NONE",
     accent_fg  = accent.fg,
     accent_bg  = accent.bg,
     fg         = darken and "#dfdfef" or "#efefff",

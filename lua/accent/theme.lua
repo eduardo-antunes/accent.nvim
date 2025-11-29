@@ -20,13 +20,17 @@ function M.get_base(colors, config)
   local c = colors
   config = config or {}
   local background = config.no_bg and c.none or c.bg
-  local status_fg  = config.invert_status and c.fg_invd or c.fg_gray1
-  local diff_add   = config.deuteranopia and c.fg_blue or c.fg_green
+  local diff_add = config.deuteranopia and c.fg_blue or c.fg_green
+
+  local status_fg  = config.gray_status
+    and (config.invert_status and c.accent_fg or c.fg)
+    or (config.invert_status and c.fg_invd or c.fg_gray1)
+  local status_bg = config.gray_status and c.bg_gray1 or c.accent_bg
 
   return {
     -- General stuff
     Normal       = { fg = c.fg       , bg = background  },
-    StatusLine   = { fg = status_fg  , bg = c.accent_bg },
+    StatusLine   = { fg = status_fg  , bg = status_bg   },
     StatusLineNC = { fg = c.fg_gray2 , bg = c.bg_gray2  },
     WinBar       = { fg = c.fg       , bg = c.bg_gray2   , bold = true },
     WinBarNC     = { fg = c.fg       , bg = c.bg_gray1  },

@@ -30,15 +30,18 @@ new options were also added.
 
 ```lua
 -- accent_color or accent_colour changes the accent color. One of red, orange,
--- green, yellow, blue, magenta or cyan; this list can be accessed with
+-- green, yellow, blue, magenta, or cyan; this list can be accessed with
 -- require("accent").accent_colors
 vim.g.accent_color = "yellow"
 
 -- accent_darken makes the background and some of the colors darker
 vim.g.accent_darken = false
 
--- accent_invert_status inverts the color of the statusline foreground. For
--- readability, I would recommend setting this to true
+-- If accent_gray_status is set to false, accent_invert_status has the same
+-- behavior as in the original: it inverts the foreground color of the
+-- statusline, rendering it (in my opinion) more readable. If accent_gray_status
+-- is set to true, accent_invert_status instead makes the foreground of the
+-- statusline use the accent color
 vim.g.accent_invert_status = false
 
 -- accent_auto_cwd_color or accent_auto_cwd_colour sets the accent color
@@ -56,6 +59,12 @@ vim.g.accent_deuteranopia = false
 
 -- accent_terminal sets terminal colors (vim.g.terminal_color_*)
 vim.g.accent_terminal = false
+
+-- accent_gray_status or accent_grey_status (the American spelling, "gray",
+-- takes precedence) makes the statusline use a gray shade for the background
+-- and the standard text color for the foreground. Use this if you think the
+-- default, colorful statusline is too much visually (as I personally do)
+vim.g.accent_gray_status = false
 
 -- After setting one or more of these options, reload the colorscheme so they
 -- will take effect with:
@@ -79,7 +88,7 @@ color is applied to user defined things, like identifiers and such. Other
 differences are, in no particular order:
 
 * Brighter color for comments, to make them stand out more;
-* Support for the terminal and deuteranopia options;
+* Support for the `deuteranopia`, `terminal`, and `gray_status` options;
 * Better cursorline support. In the original, the default background is still
   used for certain elements even when cursorline is enabled;
 * Explicit support for treesitter (mostly to stop it from overusing the accent
@@ -116,7 +125,8 @@ Another idea is to set key bindings to cycle through the accent colors on the
 fly:
 
 ```lua
-local i = 4 -- position of yellow. This will never change!
+local INDEX_OF_YELLOW = 4 -- will never change
+local i = INDEX_OF_YELLOW
 local colors = require("accent").accent_colors
 vim.g.accent_color = colors[i]
 vim.cmd.colors "accent"
