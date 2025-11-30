@@ -54,7 +54,7 @@ function M.get_base(colors, config)
     Directory    = { fg = c.fg_gray1 , bg = c.none      },
 
     -- Code syntax (standard vim system)
-    Comment    = { fg = c.fg_gray2 , bg = c.none },
+    Comment    = { fg = c.fg_gray2 , bg = c.none  , italic = config.italic_comments },
     String     = { fg = c.accent_fg, bg = c.none },
     Number     = { fg = c.accent_fg, bg = c.none },
     Constant   = { fg = c.accent_fg, bg = c.none },

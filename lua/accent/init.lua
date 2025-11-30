@@ -43,11 +43,12 @@ end
 
 local function get_config()
   local config = {
-    no_bg          = option "no_bg"         ,
-    darken         = option "darken"        ,
-    invert_status  = option "invert_status" ,
-    deuteranopia   = option "deuteranopia"  ,
-    terminal       = option "terminal"      ,
+    no_bg           = option "no_bg"           ,
+    darken          = option "darken"          ,
+    invert_status   = option "invert_status"   ,
+    deuteranopia    = option "deuteranopia"    ,
+    terminal        = option "terminal"        ,
+    italic_comments = option "italic_comments" ,
 
     accent = option "color" or option "colour",
     gray_status = option "gray_status" or option "grey_status",

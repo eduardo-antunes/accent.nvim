@@ -39,9 +39,9 @@ vim.g.accent_darken = false
 
 -- If accent_gray_status is set to false, accent_invert_status has the same
 -- behavior as in the original: it inverts the foreground color of the
--- statusline, rendering it (in my opinion) more readable. If accent_gray_status
--- is set to true, accent_invert_status instead makes the foreground of the
--- statusline use the accent color
+-- statusline, rendering it more readable. If accent_gray_status is set to true,
+-- accent_invert_status instead makes the foreground of the statusline use the
+-- accent color
 vim.g.accent_invert_status = false
 
 -- accent_auto_cwd_color or accent_auto_cwd_colour sets the accent color
@@ -63,8 +63,11 @@ vim.g.accent_terminal = false
 -- accent_gray_status or accent_grey_status (the American spelling, "gray",
 -- takes precedence) makes the statusline use a gray shade for the background
 -- and the standard text color for the foreground. Use this if you think the
--- default, colorful statusline is too much visually (as I personally do)
+-- default, colorful statusline is too much visually
 vim.g.accent_gray_status = false
+
+-- accent_italic_comments makes the comments italic
+vim.g.accent_italic_comments = false
 
 -- After setting one or more of these options, reload the colorscheme so they
 -- will take effect with:
@@ -88,11 +91,15 @@ color is applied to user defined things, like identifiers and such. Other
 differences are, in no particular order:
 
 * Brighter color for comments, to make them stand out more;
-* Support for the `deuteranopia`, `terminal`, and `gray_status` options;
 * Better cursorline support. In the original, the default background is still
   used for certain elements even when cursorline is enabled;
 * Explicit support for treesitter (mostly to stop it from overusing the accent
   color);
+* Support for the following new options:
+  * `accent_deuteranopia`
+  * `accent_terminal`
+  * `accent_gray_status`
+  * `accent_italic_comments`
 * Plugin support:
   * [mini.pick](https://github.com/nvim-mini/mini.pick)
   * [vim-fugitive](https://github.com/tpope/vim-fugitive)
