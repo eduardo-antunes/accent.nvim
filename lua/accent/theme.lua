@@ -154,12 +154,12 @@ function M.get_terminal(colors)
     colors.fg_cyan    , -- cyan
     colors.fg         , -- white
     colors.bg_gray1   , -- bright black
-    colors.bg_red     , -- bright red
-    colors.bg_green   , -- bright green
-    colors.bg_yellow  , -- bright yellow
-    colors.bg_blue    , -- bright blue
-    colors.bg_magenta , -- bright magent
-    colors.bg_cyan    , -- bright cyan
+    colors.fg_red     , -- bright red
+    colors.fg_green   , -- bright green
+    colors.fg_yellow  , -- bright yellow
+    colors.fg_blue    , -- bright blue
+    colors.fg_magenta , -- bright magent
+    colors.fg_cyan    , -- bright cyan
     colors.fg_gray2   , -- bright white
   }
 end
