@@ -25,13 +25,13 @@ function M.get_base(colors, config)
   local status_fg  = config.gray_status
     and (config.invert_status and c.accent_fg or c.fg)
     or (config.invert_status and c.fg_invd or c.fg_gray1)
-  local status_bg = config.gray_status and c.bg_gray1 or c.accent_bg
+  local status_bg = config.gray_status and c.bg_gray2 or c.accent_bg
 
   return {
     -- General stuff
     Normal       = { fg = c.fg       , bg = background  },
     StatusLine   = { fg = status_fg  , bg = status_bg   },
-    StatusLineNC = { fg = c.fg_gray2 , bg = c.bg_gray2  },
+    StatusLineNC = { fg = c.fg_gray2 , bg = c.bg_gray1  },
     WinBar       = { fg = c.fg       , bg = c.bg_gray2   , bold = true },
     WinBarNC     = { fg = c.fg       , bg = c.bg_gray1  },
     VertSplit    = { fg = c.accent_fg, bg = c.bg_gray1  },
@@ -56,8 +56,8 @@ function M.get_base(colors, config)
     -- Code syntax (standard vim system)
     Comment    = { fg = c.fg_gray2 , bg = c.none  , italic = config.italic_comments },
     String     = { fg = c.accent_fg, bg = c.none },
-    Number     = { fg = c.accent_fg, bg = c.none },
-    Constant   = { fg = c.accent_fg, bg = c.none },
+    Number     = { fg = c.fg       , bg = c.none },
+    Constant   = { fg = c.fg       , bg = c.none },
     Type       = { fg = c.fg_gray1 , bg = c.none },
     Statement  = { fg = c.fg_gray1 , bg = c.none },
     PreProc    = { fg = c.fg_gray1 , bg = c.none },
