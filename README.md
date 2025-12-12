@@ -30,7 +30,7 @@ new options were also added.
 
 ```lua
 -- accent_color or accent_colour changes the accent color. One of red, orange,
--- green, yellow, blue, magenta, or cyan; this list can be accessed with
+-- green, yellow, blue, magenta, cyan, or lime; this list can be accessed with
 -- require("accent").accent_colors
 vim.g.accent_color = "yellow"
 
@@ -95,6 +95,7 @@ differences are, in no particular order:
   used for certain elements even when cursorline is enabled;
 * Explicit support for treesitter (mostly to stop it from overusing the accent
   color);
+* Added lime color;
 * Support for the following new options:
   * `accent_deuteranopia`
   * `accent_terminal`
@@ -110,8 +111,8 @@ Invoking `require("accent")` returns a table with the following keys:
 
 * `load`: function that loads the colorscheme. It's what gets called when you
   invoke `colors accent`;
-* `colors`: table with the current color pallete, so it uses whatever accent
-  color was set when `load` was last called;
+* `colors`: table with the current color pallete. Has whatever accent color was
+   set when `load` was last called;
 * `accent_colors`: list of available accent colors. __Their order is fixed and
   won't change between versions__.
 

@@ -24,6 +24,7 @@ M.accent_list = {
   "blue"   ,
   "magenta",
   "cyan"   ,
+  "lime"   ,
 }
 
 M.accent_colors = {
@@ -34,6 +35,7 @@ M.accent_colors = {
   blue    = { fg = "#61afe7", bg = "#3876af" },
   magenta = { fg = "#c688cd", bg = "#965498" },
   cyan    = { fg = "#56b6c2", bg = "#3696a2" },
+  lime    = { fg = "#c8e4b4", bg = "#91c969" },
 }
 
 function M.get(config)
@@ -63,6 +65,7 @@ function M.get(config)
     fg_blue    = M.accent_colors.blue.fg    ,
     fg_magenta = M.accent_colors.magenta.fg ,
     fg_cyan    = M.accent_colors.cyan.fg    ,
+    fg_lime    = M.accent_colors.lime.fg    ,
     bg_red     = M.accent_colors.red.bg     ,
     bg_orange  = M.accent_colors.orange.bg  ,
     bg_green   = M.accent_colors.green.bg   ,
@@ -70,6 +73,7 @@ function M.get(config)
     bg_blue    = M.accent_colors.blue.bg    ,
     bg_magenta = M.accent_colors.magenta.bg ,
     bg_cyan    = M.accent_colors.cyan.bg    ,
+    bg_lime    = M.accent_colors.lime.bg    ,
   }
 end
 

@@ -136,10 +136,11 @@ function M.get_base(colors, config)
     MiniPickPromptPrefix = { link = "String" },
     MiniPickMatchRanges  = { link = "String" },
 
-    -- fugitive
+    -- fugitive, and other git things
     FugitiveUntrackedModifier = { link = "String" },
     FugitiveUnstagedModifier  = { link = "String" },
     FugitiveStagedModifier    = { link = "String" },
+    gitCommitSummary          = { link = "String" },
   }
 end
 
