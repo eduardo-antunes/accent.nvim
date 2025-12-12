@@ -87,15 +87,17 @@ colorscheme uses a light gray as the default foreground color and uses a color
 closer to white to highlight syntax stuff. In this version, this logic is
 flipped. This comes from a perception that syntax stuff is what is in least
 demand to be highlighted, because it's easily recognizable, so the more readable
-color is applied to user defined things, like identifiers and such. Other
-differences are, in no particular order:
+color is applied to user defined things, like identifiers and such. Furthermore,
+the accent color is reserved for strings and certain UI elements; numbers, for
+instance, are not highlighted. This more reserved use of the accent color makes
+it pop out more. Other differences are, in no particular order:
 
+* New color: lime;
 * Brighter color for comments, to make them stand out more;
 * Better cursorline support. In the original, the default background is still
   used for certain elements even when cursorline is enabled;
 * Explicit support for treesitter (mostly to stop it from overusing the accent
   color);
-* Added lime color;
 * Support for the following new options:
   * `accent_deuteranopia`
   * `accent_terminal`
