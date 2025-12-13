@@ -78,14 +78,14 @@ function M.get_base(colors, config)
     DiagnosticError = { fg = c.fg_red   , bg = c.none },
     DiagnosticWarn  = { fg = c.fg_yellow, bg = c.none },
     DiagnosticInfo  = { fg = c.fg_blue  , bg = c.none },
-    DiagnosticHint  = { fg = c.fg_cyan  , bg = c.none },
+    DiagnosticHint  = { fg = c.fg_lime  , bg = c.none },
     DiagnosticOk    = { fg = c.fg_green , bg = c.none },
 
     -- Diagnostics underline
     DiagnosticUnderlineError = { sp = c.fg_red   , bg = c.none, undercurl = true },
     DiagnosticUnderlineWarn  = { sp = c.fg_yellow, bg = c.none, undercurl = true },
     DiagnosticUnderlineInfo  = { sp = c.fg_blue  , bg = c.none, undercurl = true },
-    DiagnosticUnderlineHint  = { sp = c.fg_cyan  , bg = c.none, undercurl = true },
+    DiagnosticUnderlineHint  = { sp = c.fg_lime  , bg = c.none, undercurl = true },
     DiagnosticUnderlineOk    = { sp = c.fg_green , bg = c.none, undercurl = true },
 
     -- Spell stuff
@@ -97,7 +97,7 @@ function M.get_base(colors, config)
     -- Messages
     OkMsg      = { fg = c.fg_green , bg = c.none },
     WarningMsg = { fg = c.fg_yellow, bg = c.none },
-    ErrorMsg   = { fg = c.red      , bg = c.none },
+    ErrorMsg   = { fg = c.fg_red   , bg = c.none },
     MoreMsg    = { fg = c.accent_fg, bg = c.none },
     ModeMsg    = { fg = c.accent_fg, bg = c.none },
 
@@ -128,6 +128,7 @@ function M.get_base(colors, config)
     ["@type.builtin"]     = { link = "Type"       },
     ["@constant.builtin"] = { link = "Constant"   },
     ["@constructor"]      = { link = "Statement"  },
+    ["@comment.note.vimdoc"] = { link = "String"  },
     ["@variable.parameter.builtin"] = { link = "Identifier" },
 
     -- mini.pick
@@ -156,7 +157,7 @@ function M.get_terminal(colors)
     colors.fg         , -- white
     colors.bg_gray1   , -- bright black
     colors.fg_red     , -- bright red
-    colors.fg_green   , -- bright green
+    colors.fg_lime    , -- bright green
     colors.fg_yellow  , -- bright yellow
     colors.fg_blue    , -- bright blue
     colors.fg_magenta , -- bright magent
