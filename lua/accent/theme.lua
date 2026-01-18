@@ -142,6 +142,10 @@ function M.get_base(colors, config)
     FugitiveUnstagedModifier  = { link = "String" },
     FugitiveStagedModifier    = { link = "String" },
     gitCommitSummary          = { link = "String" },
+
+    -- shell scripts
+    shDeref = { link = "Identifier" },
+    shQuote = { link = "String"     },
   }
 end
 
