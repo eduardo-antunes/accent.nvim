@@ -27,13 +27,13 @@ M.accent_list = {
 }
 
 M.accent_colors = {
-  red     = { fg = "#e06c75", bg = "#b04c55" },
-  orange  = { fg = "#ee9360", bg = "#b66930" },
+  red     = { fg = "#eeaab0", bg = "#e26a74" },
+  orange  = { fg = "#f5c1a3", bg = "#ed935e" },
   green   = { fg = "#c8e4b4", bg = "#91c969" },
   yellow  = { fg = "#ffffcc", bg = "#ffff80" },
-  blue    = { fg = "#61afe7", bg = "#3876af" },
-  magenta = { fg = "#c688cd", bg = "#965498" },
-  cyan    = { fg = "#56b6c2", bg = "#3696a2" },
+  blue    = { fg = "#a6d4f2", bg = "#4da8e6" },
+  magenta = { fg = "#d4a5d9", bg = "#ba6fc3" },
+  cyan    = { fg = "#8fcdd6", bg = "#57b3c1" },
 }
 
 function M.get(config)

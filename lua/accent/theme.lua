@@ -75,18 +75,18 @@ function M.get_base(colors, config)
     DiffText   = { fg = c.fg_gray1, bg = c.none     },
 
     -- Diagnostics
-    DiagnosticError = { fg = c.fg_red   , bg = c.none },
-    DiagnosticWarn  = { fg = c.fg_yellow, bg = c.none },
-    DiagnosticInfo  = { fg = c.fg_blue  , bg = c.none },
+    DiagnosticError = { fg = c.bg_red   , bg = c.none },
+    DiagnosticWarn  = { fg = c.bg_yellow, bg = c.none },
+    DiagnosticInfo  = { fg = c.bg_blue  , bg = c.none },
     DiagnosticHint  = { fg = c.fg_green , bg = c.none },
-    DiagnosticOk    = { fg = c.fg_green , bg = c.none },
+    DiagnosticOk    = { fg = c.bg_green , bg = c.none },
 
     -- Diagnostics underline
-    DiagnosticUnderlineError = { sp = c.fg_red   , bg = c.none, undercurl = true },
-    DiagnosticUnderlineWarn  = { sp = c.fg_yellow, bg = c.none, undercurl = true },
-    DiagnosticUnderlineInfo  = { sp = c.fg_blue  , bg = c.none, undercurl = true },
+    DiagnosticUnderlineError = { sp = c.bg_red   , bg = c.none, undercurl = true },
+    DiagnosticUnderlineWarn  = { sp = c.bg_yellow, bg = c.none, undercurl = true },
+    DiagnosticUnderlineInfo  = { sp = c.bg_blue  , bg = c.none, undercurl = true },
     DiagnosticUnderlineHint  = { sp = c.fg_green , bg = c.none, undercurl = true },
-    DiagnosticUnderlineOk    = { sp = c.fg_green , bg = c.none, undercurl = true },
+    DiagnosticUnderlineOk    = { sp = c.bg_green , bg = c.none, undercurl = true },
 
     -- Spell stuff
     SpellBad   = { sp = c.fg_red    , bg = c.none, undercurl = true },
@@ -160,12 +160,12 @@ function M.get_terminal(colors)
     colors.fg_cyan    , -- cyan
     colors.fg         , -- white
     colors.bg_gray1   , -- bright black
-    colors.fg_red     , -- bright red
+    colors.bg_red     , -- bright red
     colors.bg_green   , -- bright green
     colors.bg_yellow  , -- bright yellow
-    colors.fg_blue    , -- bright blue
-    colors.fg_magenta , -- bright magent
-    colors.fg_cyan    , -- bright cyan
+    colors.bg_blue    , -- bright blue
+    colors.bg_magenta , -- bright magent
+    colors.bg_cyan    , -- bright cyan
     colors.fg_gray1   , -- bright white
   }
 end
