@@ -22,9 +22,7 @@ function M.get_base(colors, config)
   local background = config.no_bg and c.none or c.bg
   local diff_add = config.deuteranopia and c.fg_blue or c.fg_green
 
-  local status_fg  = config.gray_status
-    and (config.invert_status and c.accent_fg or c.fg)
-    or (config.invert_status and c.fg_invd or c.fg_gray1)
+  local status_fg  = config.gray_status and c.fg or c.fg_invd
   local status_bg = config.gray_status and c.bg_gray2 or c.accent_bg
 
   return {

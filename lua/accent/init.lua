@@ -21,42 +21,17 @@ local function option(name)
 end
 
 
-local function cwd_color()
-  local function hash(str)
-    local bit = require "bit"
-    local hash = 2166136261
-    for i = 1, #str do
-      local c = str:byte(i)
-      hash = bit.bxor(hash, c) * 16777619
-    end
-    return hash
-  end
-
-  local function remainder(x, y)
-    return math.modf(math.fmod(math.abs(x), y))
-  end
-
-  local colors = require("accent.colors").accent_list
-  local key = remainder(hash(vim.fn.getcwd()), #colors) + 1
-  return colors[key]
-end
-
 local function get_config()
   local config = {
     no_bg           = option "no_bg"           ,
     darken          = option "darken"          ,
-    invert_status   = option "invert_status"   ,
     deuteranopia    = option "deuteranopia"    ,
     terminal        = option "terminal"        ,
     italic_comments = option "italic_comments" ,
 
     accent = option "color" or option "colour",
     gray_status = option "gray_status" or option "grey_status",
-    auto_cwd_color = option "auto_cwd_color" or option "auto_cwd_colour",
   }
-  if not config.accent and config.auto_cwd_color then
-    config.accent = cwd_color()
-  end
   return config
 end
 
