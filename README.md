@@ -24,29 +24,18 @@ vim.pack.add { src = "https://github.com/eduardo-antunes/accent.nvim" }
 
 ## Configuration
 
-The colorscheme is configured through global vim variables (`vim.g`) and strict
-compatibility is kept with the original colorscheme's configuration. A couple
-new options were also added.
+The colorscheme is configured through global vim variables (`vim.g`), as shown
+below. Most of the options were brought over from the original colorscheme, and
+a couple were removed.
 
 ```lua
 -- accent_color or accent_colour changes the accent color. One of red, orange,
--- green, yellow, blue, magenta, cyan, or lime; this list can be accessed with
+-- green, yellow, blue, magenta, or cyan; this list can be accessed with
 -- require("accent").accent_colors
 vim.g.accent_color = "yellow"
 
 -- accent_darken makes the background and some of the colors darker
 vim.g.accent_darken = false
-
--- If accent_gray_status is set to false, accent_invert_status has the same
--- behavior as in the original: it inverts the foreground color of the
--- statusline, rendering it more readable. If accent_gray_status is set to true,
--- accent_invert_status instead makes the foreground of the statusline use the
--- accent color
-vim.g.accent_invert_status = false
-
--- accent_auto_cwd_color or accent_auto_cwd_colour sets the accent color
--- automatically based on the hash of the current directory
-vim.g.accent_auto_cwd_color = false
 
 -- accent_no_bg prevents the background color from being set. This is mostly
 -- useful for transparent terminal backgrounds
@@ -60,10 +49,8 @@ vim.g.accent_deuteranopia = false
 -- accent_terminal sets terminal colors (vim.g.terminal_color_*)
 vim.g.accent_terminal = false
 
--- accent_gray_status or accent_grey_status (the American spelling, "gray",
--- takes precedence) makes the statusline use a gray shade for the background
--- and the standard text color for the foreground. Use this if you think the
--- default, colorful statusline is too much visually
+-- accent_gray_status or accent_grey_status makes the statusline background
+-- gray and its text white; set it to true for an even more colorless look
 vim.g.accent_gray_status = false
 
 -- accent_italic_comments makes the comments italic
@@ -74,26 +61,26 @@ vim.g.accent_italic_comments = false
 vim.cmd.colors "accent"
 ```
 
-The values presented above are the default ones. For the options that support
-both spellings of color, the American spelling ("color") takes precedence if
-both versions are set. This behavior is compatible with the original plugin.
-Another point that should be noted is that, if any option is set to 0, it will
-be interpreted as false; this is also for compatibility.
+The values presented above are the default ones. When setting options, 0 is
+understood to be false, for compatibility with the original.
 
 ## Differences from accent.vim
 
-The main difference is in how colors tend to be applied generally. The original
-colorscheme uses a light gray as the default foreground color and uses a color
-closer to white to highlight syntax stuff. In this version, this logic is
-flipped. This comes from a perception that syntax stuff is what is in least
-demand to be highlighted, because it's easily recognizable, so the more readable
-color is applied to user defined things, like identifiers and such. Furthermore,
-the accent color is reserved for strings and certain UI elements; numbers, for
-instance, are not highlighted. This more reserved use of the accent color makes
-it pop out more. Other differences are, in no particular order:
+The original theme uses a light gray as the main foreground color and a color
+closer to white to highlight syntax elements (keywords and such). In
+accent.nvim, this logic is flipped. The idea is that syntax stuff is easily
+recognizable, so the more readable color can used for the main foreground color
+instead.
 
-* New color: lime;
-* Brighter color for comments, to make them stand out more;
+The list of accent colors is the same, but the colors themselves are different.
+They are essentially pastel versions of the originals. This comes down to
+personal preference, honestly. Furthermore, the accent color is used more
+sparingly, being reserved for strings and certain UI elements. This makes it pop
+out even more.
+
+Other, less impactful differences are, in no particular order:
+
+* Brighter color for comments and line numbers, to make them stand out more;
 * Better cursorline support. In the original, the default background is still
   used for certain elements even when cursorline is enabled;
 * Explicit support for treesitter (mostly to stop it from overusing the accent
@@ -103,6 +90,9 @@ it pop out more. Other differences are, in no particular order:
   * `accent_terminal`
   * `accent_gray_status`
   * `accent_italic_comments`
+* Dropped support for the following original options:
+  * `accent_invert_status` (it's effectively always set)
+  * `accent_auto_cwd_color`
 * Plugin support:
   * [mini.pick](https://github.com/nvim-mini/mini.pick)
   * [vim-fugitive](https://github.com/tpope/vim-fugitive)
@@ -180,16 +170,16 @@ vim.keymap.set("n", "<leader>C", accent_colors_picker)
 ## Thanks
 
 Thank you to [Reece Selwood](https://github.com/Alligator), aka Alligator, for
-the original colorscheme. All colors in this port, as well as most highlight
-groups, were taken straight from the original. It is a lovely colorscheme with a
-really creative idea, for which all credit goes to him.
+the original colorscheme. All colors and highlight groups in this port were
+either taken straight from the original or highly inspired by it. It is a lovely
+colorscheme with a really creative idea, for which all credit goes to him.
 
 ## License
 
 This is port is licensed under the Apache license:
 
 ```
-Copyright 2025 Eduardo Antunes dos Santos Vieira
+Copyright 2025-2026 Eduardo Antunes dos Santos Vieira
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
