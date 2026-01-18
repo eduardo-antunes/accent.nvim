@@ -12,6 +12,13 @@ Unlike the original, this version is GUI-only (at least for the moment).
 (the repository for the original colorscheme has a gif that showcases the
 concept more effectively)
 
+> [!NOTE]
+> The "couple of tweaks" has now made the overall color pallete substantially
+> different, and broken compatibility with the original's configuration - this
+> is really more of a "loose" port at this point. If you want something closer
+> to and fully compatible with the original, check out the `less-tweaks` tag in
+> this repository.
+
 ## Installation
 
 No misteries here. There is no setup function that you need to call or anything,
@@ -101,10 +108,9 @@ Other, less impactful differences are, in no particular order:
 
 Invoking `require("accent")` returns a table with the following keys:
 
+* `colors`: table with the current color pallete;
 * `load`: function that loads the colorscheme. It's what gets called when you
   invoke `colors accent`;
-* `colors`: table with the current color pallete. Has whatever accent color was
-   set when `load` was last called;
 * `accent_colors`: list of available accent colors. __Their order is fixed and
   won't change between versions__.
 
