@@ -31,11 +31,11 @@ function M.get_base(colors, config)
     -- General stuff
     Normal       = { fg = c.fg       , bg = background  },
     StatusLine   = { fg = status_fg  , bg = status_bg   },
-    StatusLineNC = { fg = c.fg_gray2 , bg = c.bg_gray1  },
+    StatusLineNC = { fg = c.fg_gray1 , bg = c.bg_gray1  },
     WinBar       = { fg = c.fg       , bg = c.bg_gray2   , bold = true },
     WinBarNC     = { fg = c.fg       , bg = c.bg_gray1  },
     VertSplit    = { fg = c.accent_fg, bg = c.bg_gray1  },
-    LineNr       = { fg = c.fg_gray3 , bg = c.none      },
+    LineNr       = { fg = c.fg_gray2 , bg = c.none      },
     SignColumn   = { fg = c.accent_fg, bg = c.none      },
     CursorLineNr = { fg = c.fg_gray1 , bg = c.none      },
     CursorLine   = { fg = c.none     , bg = c.bg_gray1  },
@@ -54,7 +54,7 @@ function M.get_base(colors, config)
     Directory    = { fg = c.fg_gray1 , bg = c.none      },
 
     -- Code syntax (standard vim system)
-    Comment    = { fg = c.fg_gray2 , bg = c.none  , italic = config.italic_comments },
+    Comment    = { fg = c.fg_gray1 , bg = c.none  , italic = config.italic_comments },
     String     = { fg = c.accent_fg, bg = c.none },
     Number     = { fg = c.fg       , bg = c.none },
     Constant   = { fg = c.fg       , bg = c.none },
@@ -78,14 +78,14 @@ function M.get_base(colors, config)
     DiagnosticError = { fg = c.fg_red   , bg = c.none },
     DiagnosticWarn  = { fg = c.fg_yellow, bg = c.none },
     DiagnosticInfo  = { fg = c.fg_blue  , bg = c.none },
-    DiagnosticHint  = { fg = c.fg_lime  , bg = c.none },
+    DiagnosticHint  = { fg = c.fg_green , bg = c.none },
     DiagnosticOk    = { fg = c.fg_green , bg = c.none },
 
     -- Diagnostics underline
     DiagnosticUnderlineError = { sp = c.fg_red   , bg = c.none, undercurl = true },
     DiagnosticUnderlineWarn  = { sp = c.fg_yellow, bg = c.none, undercurl = true },
     DiagnosticUnderlineInfo  = { sp = c.fg_blue  , bg = c.none, undercurl = true },
-    DiagnosticUnderlineHint  = { sp = c.fg_lime  , bg = c.none, undercurl = true },
+    DiagnosticUnderlineHint  = { sp = c.fg_green , bg = c.none, undercurl = true },
     DiagnosticUnderlineOk    = { sp = c.fg_green , bg = c.none, undercurl = true },
 
     -- Spell stuff
@@ -161,12 +161,12 @@ function M.get_terminal(colors)
     colors.fg         , -- white
     colors.bg_gray1   , -- bright black
     colors.fg_red     , -- bright red
-    colors.fg_lime    , -- bright green
-    colors.fg_yellow  , -- bright yellow
+    colors.bg_green   , -- bright green
+    colors.bg_yellow  , -- bright yellow
     colors.fg_blue    , -- bright blue
     colors.fg_magenta , -- bright magent
     colors.fg_cyan    , -- bright cyan
-    colors.fg_gray2   , -- bright white
+    colors.fg_gray1   , -- bright white
   }
 end
 
