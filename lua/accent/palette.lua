@@ -50,6 +50,7 @@ function M.get(config)
     fg_gray2   = darken and "#888888" or "#999999",
     fg_inv     = "#282c34",
     fg_invd    = "#181c24",
+    fg_white   = "#ffffff",
     bg         = darken and "#181c24" or "#282c34",
     bg_gray1   = "#383c44",
     bg_gray2   = "#484c54",

@@ -23,14 +23,13 @@ end
 
 local function get_config()
   local config = {
-    no_bg           = option "no_bg"           ,
-    darken          = option "darken"          ,
-    deuteranopia    = option "deuteranopia"    ,
-    terminal        = option "terminal"        ,
-    italic_comments = option "italic_comments" ,
-
-    accent = option "color" or option "colour",
-    gray_status = option "gray_status" or option "grey_status",
+    no_bg           = option "no_bg"                               ,
+    darken          = option "darken"                              ,
+    deuteranopia    = option "deuteranopia"                        ,
+    terminal        = option "terminal"                            ,
+    italic_comments = option "italic_comments"                     ,
+    accent          = option "color" or option "colour"            ,
+    gray_status     = option "gray_status" or option "grey_status" ,
   }
   return config
 end
@@ -39,7 +38,7 @@ end
 
 local M = {}
 
-M.accent_colors = require("accent.colors").accent_list
+M.accent_colors = require("accent.palette").accent_list
 
 function M.load()
   vim.cmd("hi clear")
@@ -52,7 +51,7 @@ function M.load()
 
   local conf = get_config()
   local theme = require("accent.theme")
-  M.colors = require("accent.colors").get(conf)
+  M.colors = require("accent.palette").get(conf)
 
   local base = theme.get_base(M.colors, conf)
   for group, colors in pairs(base) do

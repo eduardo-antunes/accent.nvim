@@ -35,7 +35,7 @@ function M.get_base(colors, config)
     VertSplit    = { fg = c.accent_fg, bg = c.bg_gray1  },
     LineNr       = { fg = c.fg_gray2 , bg = c.none      },
     SignColumn   = { fg = c.accent_fg, bg = c.none      },
-    CursorLineNr = { fg = c.fg       , bg = c.none      },
+    CursorLineNr = { fg = c.fg_white , bg = c.none       , bold = true },
     CursorLine   = { fg = c.none     , bg = c.bg_gray1  },
     CursorColumn = { fg = c.none     , bg = c.bg_gray1  },
     MatchParen   = { fg = c.fg_gray1 , bg = c.bg_gray1  },
@@ -55,8 +55,8 @@ function M.get_base(colors, config)
     -- Code syntax (standard vim system)
     Comment    = { fg = c.fg_gray1 , bg = c.none  , italic = config.italic_comments },
     String     = { fg = c.accent_fg, bg = c.none },
-    Number     = { fg = c.fg       , bg = c.none },
-    Constant   = { fg = c.fg       , bg = c.none },
+    Number     = { fg = c.fg_white , bg = c.none },
+    Constant   = { fg = c.fg_white , bg = c.none },
     Type       = { fg = c.fg_gray1 , bg = c.none },
     Statement  = { fg = c.fg_gray1 , bg = c.none },
     PreProc    = { fg = c.fg_gray1 , bg = c.none },
@@ -65,7 +65,7 @@ function M.get_base(colors, config)
     Error      = { fg = c.fg_red   , bg = c.none },
     Operator   = { fg = c.fg_gray1 , bg = c.none },
     Identifier = { fg = c.fg       , bg = c.none },
-    Todo       = { fg = c.fg       , bg = c.none },
+    Todo       = { fg = c.fg_white , bg = c.none },
 
     -- Diff mode
     DiffAdd    = { fg = diff_add  , bg = c.none     },
