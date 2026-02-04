@@ -119,16 +119,20 @@ function M.get_base(colors, config)
     Removed     = { link = "DiffDelete" },
     Changed     = { link = "DiffChange" },
 
-    -- Treesitter stuff. By default it ends up coloring too much
-    ["@variable.builtin"] = { link = "Identifier" },
-    ["@function.builtin"] = { link = "Identifier" },
-    ["@module.builtin"]   = { link = "Identifier" },
-    ["@tag.builtin"]      = { link = "Identifier" },
-    ["@type.builtin"]     = { link = "Type"       },
-    ["@constant.builtin"] = { link = "Constant"   },
-    ["@constructor"]      = { link = "Statement"  },
-    ["@comment.note.vimdoc"] = { link = "String"  },
+    -- Treesitter stuff. By default it ends up coloring too much or too little
+    ["@variable.builtin"]           = { link = "Identifier" },
+    ["@function.builtin"]           = { link = "Identifier" },
+    ["@module.builtin"]             = { link = "Identifier" },
+    ["@tag.builtin"]                = { link = "Identifier" },
+    ["@type.builtin"]               = { link = "Type"       },
+    ["@constant.builtin"]           = { link = "Constant"   },
+    ["@constructor"]                = { link = "Statement"  },
+    ["@comment.note.vimdoc"]        = { link = "String"     },
     ["@variable.parameter.builtin"] = { link = "Identifier" },
+    ["@character.printf"]           = { link = "Identifier" },
+    ["@string.escape"]              = { link = "Identifier" },
+    ["@keyword.javadoc"]            = { link = "Special"    },
+    ["@variable.javadoc"]           = { link = "Special"    },
 
     -- mini.pick
     MiniPickPrompt       = { link = "String" },
@@ -142,9 +146,11 @@ function M.get_base(colors, config)
     FugitiveStagedModifier    = { link = "String" },
     gitCommitSummary          = { link = "String" },
 
-    -- shell scripts
-    shDeref = { link = "Identifier" },
-    shQuote = { link = "String"     },
+    -- Very specific languages
+    shDeref      = { link = "Identifier" },
+    shQuote      = { link = "String"     },
+    dosIniHeader = { link = "Statement"  },
+    dosIniLabel  = { link = "Identifier" },
   }
 end
 
