@@ -38,7 +38,7 @@ function M.get_base(colors, config)
     CursorLineNr = { fg = c.fg_white , bg = c.none       , bold = true },
     CursorLine   = { fg = c.none     , bg = c.bg_gray1  },
     CursorColumn = { fg = c.none     , bg = c.bg_gray1  },
-    MatchParen   = { fg = c.fg_gray1 , bg = c.bg_gray1  },
+    MatchParen   = { fg = c.fg_gray1 , bg = c.bg_gray2  },
     NonText      = { fg = c.fg_gray2 , bg = c.none      },
     WildMenu     = { fg = c.fg_inv   , bg = c.bg_inv    },
     Search       = { fg = c.fg_inv   , bg = c.accent_bg },
