@@ -57,6 +57,7 @@ function M.get_base(colors, config)
     Identifier = { fg = c.fg       , bg = c.none },
     Label      = { fg = c.fg       , bg = c.none },
     Type       = { fg = c.fg       , bg = c.none },
+    Tag        = { fg = c.fg       , bg = c.none },
     Number     = { fg = c.fg_white , bg = c.none },
     Constant   = { fg = c.fg_white , bg = c.none },
     Statement  = { fg = c.fg_gray1 , bg = c.none },
@@ -134,6 +135,7 @@ function M.get_base(colors, config)
     ["@string.escape"]              = { link = "Identifier" },
     ["@keyword.javadoc"]            = { link = "Special"    },
     ["@variable.javadoc"]           = { link = "Special"    },
+    ["@tag.delimiter"]              = { link = "Statement"  },
 
     -- mini.pick
     MiniPickPrompt       = { link = "String" },
@@ -152,6 +154,7 @@ function M.get_base(colors, config)
     shQuote      = { link = "String"     },
     dosIniHeader = { link = "Statement"  },
     dosIniLabel  = { link = "Identifier" },
+    tomlTable    = { link = "Statement"  },
   }
 end
 
