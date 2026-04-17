@@ -39,7 +39,7 @@ a couple were removed.
 -- accent_color or accent_colour changes the accent color. One of red, orange,
 -- green, yellow, blue, magenta, or cyan; this list can be accessed with
 -- require("accent").accent_colors
-vim.g.accent_color = "yellow"
+vim.g.accent_color = "green"
 
 -- accent_darken makes the background and some of the colors darker
 vim.g.accent_darken = false
@@ -48,17 +48,10 @@ vim.g.accent_darken = false
 -- useful for transparent terminal backgrounds
 vim.g.accent_no_bg = false
 
--- accent_deuteranopia makes the diff added color be blue instead of green, to
+-- accent_deuteranopia makes the diff added color blue instead of green, to
 -- prevent confusion with the red used for diff deleted. Mostly useful if you
--- have deuteranopia
+-- have deuteranopia (or if you think it looks nice)
 vim.g.accent_deuteranopia = false
-
--- accent_terminal sets terminal colors (vim.g.terminal_color_*)
-vim.g.accent_terminal = false
-
--- accent_gray_status or accent_grey_status makes the statusline background
--- gray and its text white; set it to true for an even more colorless look
-vim.g.accent_gray_status = false
 
 -- accent_italic_comments makes the comments italic
 vim.g.accent_italic_comments = false
@@ -87,6 +80,9 @@ out even more.
 
 Other, less impactful differences are, in no particular order:
 
+* The default accent color is green instead of yellow;
+* Colors for the built in terminal (`vim.g.terminal_color_*`) are set;
+* The statusline is always a shade of gray, instead of the accent color;
 * Brighter color for comments and line numbers, to make them stand out more;
 * Better cursorline support. In the original, the default background is still
   used for certain elements even when cursorline is enabled;
@@ -94,10 +90,8 @@ Other, less impactful differences are, in no particular order:
   color);
 * Support for the following new options:
   * `accent_deuteranopia`
-  * `accent_terminal`
-  * `accent_gray_status`
   * `accent_italic_comments`
-* Dropped support for the following original options:
+* No support for the following original options:
   * `accent_invert_status` (it's effectively always set)
   * `accent_auto_cwd_color`
 * Plugin support:
@@ -131,8 +125,8 @@ Another idea is to set key bindings to cycle through the accent colors on the
 fly:
 
 ```lua
-local INDEX_OF_YELLOW = 4 -- will never change
-local i = INDEX_OF_YELLOW
+local GREEN = 3 -- will never change
+local i = GREEN
 local colors = require("accent").accent_colors
 vim.g.accent_color = colors[i]
 vim.cmd.colors "accent"
@@ -176,7 +170,7 @@ vim.keymap.set("n", "<leader>C", accent_colors_picker)
 ## Thanks
 
 Thank you to [Reece Selwood](https://github.com/Alligator), aka Alligator, for
-the original colorscheme. All colors and highlight groups in this port were
+the original colorscheme. Most colors and highlight groups in this port were
 either taken straight from the original or highly inspired by it. It is a lovely
 colorscheme with a really creative idea, for which all credit goes to him.
 

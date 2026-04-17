@@ -22,13 +22,10 @@ function M.get_base(colors, config)
   local background = config.no_bg and c.none or c.bg
   local diff_add = config.deuteranopia and c.fg_blue or c.fg_green
 
-  local status_fg  = config.gray_status and c.fg or c.fg_invd
-  local status_bg = config.gray_status and c.bg_gray2 or c.accent_bg
-
   return {
     -- General stuff
     Normal       = { fg = c.fg       , bg = background  },
-    StatusLine   = { fg = status_fg  , bg = status_bg   },
+    StatusLine   = { fg = c.fg       , bg = c.bg_gray2  },
     StatusLineNC = { fg = c.fg_gray1 , bg = c.bg_gray1  },
     WinBar       = { fg = c.fg       , bg = c.bg_gray2   , bold = true },
     WinBarNC     = { fg = c.fg       , bg = c.bg_gray1  },

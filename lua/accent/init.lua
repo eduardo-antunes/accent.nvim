@@ -23,13 +23,11 @@ end
 
 local function get_config()
   local config = {
-    no_bg           = option "no_bg"                               ,
-    darken          = option "darken"                              ,
-    deuteranopia    = option "deuteranopia"                        ,
-    terminal        = option "terminal"                            ,
-    italic_comments = option "italic_comments"                     ,
-    accent          = option "color" or option "colour"            ,
-    gray_status     = option "gray_status" or option "grey_status" ,
+    no_bg           = option "no_bg"                    ,
+    darken          = option "darken"                   ,
+    deuteranopia    = option "deuteranopia"             ,
+    italic_comments = option "italic_comments"          ,
+    accent          = option "color" or option "colour" ,
   }
   return config
 end
@@ -58,7 +56,6 @@ function M.load()
     vim.api.nvim_set_hl(0, group, colors)
   end
 
-  if not conf.terminal then return end
   local term = theme.get_terminal(M.colors)
   for i = 1, #term do
     local key = string.format("terminal_color_%d", i - 1)
