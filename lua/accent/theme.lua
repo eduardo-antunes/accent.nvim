@@ -149,6 +149,7 @@ function M.get_base(colors, config)
     -- Very specific languages
     shDeref      = { link = "Identifier" },
     shQuote      = { link = "String"     },
+    sqlKeyword   = { link = "Statement"  },
     dosIniHeader = { link = "Statement"  },
     dosIniLabel  = { link = "Identifier" },
     tomlTable    = { link = "Statement"  },
