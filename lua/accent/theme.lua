@@ -124,7 +124,7 @@ function M.get_base(colors, config)
     ["@module.builtin"]             = { link = "Identifier" },
     ["@tag.builtin"]                = { link = "Identifier" },
     ["@type.builtin"]               = { link = "Statement"  },
-    ["@constructor"]                = { link = "Statement"  },
+    ["@constructor"]                = { link = "Identifier"  },
     ["@constant.builtin"]           = { link = "Constant"   },
     ["@comment.note.vimdoc"]        = { link = "String"     },
     ["@variable.parameter.builtin"] = { link = "Identifier" },
